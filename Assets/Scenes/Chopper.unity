@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1276,7 +1276,7 @@ MonoBehaviour:
   RootNode: {fileID: 413726470}
   NodeCam: {fileID: 1040388556}
   kSightLength: 20
-  CameraDistance: 3
+  CameraDistance: 2
 --- !u!1 &948654526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,7 +1402,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.041161, y: -3.4189897, z: -15.169675}
+  m_LocalPosition: {x: -1.041161, y: 2.29, z: -15.169675}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1799361661}
@@ -1464,7 +1464,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 10.069196
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1473,7 +1473,7 @@ Camera:
     height: 0.34
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 26.991467
+  field of view: 100
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2215,7 +2215,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799361660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.041161, y: 4.4189897, z: -1.6903257}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
