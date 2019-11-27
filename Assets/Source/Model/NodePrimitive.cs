@@ -6,6 +6,11 @@ public class NodePrimitive: MonoBehaviour {
     public Color MyColor = new Color(0.1f, 0.1f, 0.2f, 1.0f);
     public Vector3 Pivot;
     public Vector3 currentLoc;
+    public GameObject hitbox;
+
+    public bool genHitbox = false;
+    public SceneNode manipulateIfHit = null;
+    
 
 
     private void Start()
@@ -20,6 +25,22 @@ public class NodePrimitive: MonoBehaviour {
         Matrix4x4 trs = Matrix4x4.TRS(transform.localPosition, transform.localRotation, transform.localScale);
         Matrix4x4 m = nodeMatrix * p * trs * invP;
         currentLoc = m.GetColumn(3);
+        if (genHitbox)
+        {
+            if (hitbox == null)
+            {
+                hitbox = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+                hitbox.name = "Ref";
+                hitbox.GetComponent<Renderer>().enabled = false;
+            }
+            
+            hitbox.transform.position = currentLoc;
+            hitbox.transform.localRotation = transform.rotation;
+            hitbox.transform.localScale = transform.lossyScale;
+            hitbox.AddComponent<ReferenceToPrimitive>().np = this;
+        }
+        
+
         GetComponent<Renderer>().material.SetMatrix("MyTRSMatrix", m);
         GetComponent<Renderer>().material.SetColor("MyColor", MyColor);
         GetComponent<Renderer>().material.SetVector("lightPos", new Vector4(0, 1, 0, 1));
