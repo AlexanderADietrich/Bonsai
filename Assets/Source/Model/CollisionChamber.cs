@@ -8,11 +8,33 @@ public class CollisionChamber : MonoBehaviour
     public SceneNode nBlade;
     public NodePrimitive blade;
     private GameObject cylinderCheck;
+    private GameObject thePlantWold;
     // Start is called before the first frame update
     void Start()
     {
         cylinderCheck = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         cylinderCheck.GetComponent<Renderer>().enabled = false;
+        thePlantWold = GameObject.Find("ThePlantWorld");
+        Debug.Assert(thePlantWold != null);
+    }
+
+    private void CutSegment(GrowingSceneNode targetNode)
+    {
+        // Create a new TheWorld so that the cut segment can remain visible
+        GameObject tempParent = new GameObject("tempParent");
+        tempParent.AddComponent<TheWorld>();
+        tempParent.GetComponent<TheWorld>().RootNode = targetNode.GetComponent<SceneNode>();
+        Debug.Log("Cut");
+
+
+        NodePrimitive primitive = targetNode.transform.GetChild(0).GetChild(0).GetComponent<NodePrimitive>();
+        Vector3 lastAttachedPosition;
+        lastAttachedPosition = primitive.currentLoc;
+        
+        targetNode.NodeOrigin = lastAttachedPosition;
+        targetNode.transform.parent = tempParent.transform;
+        plantParts.Remove(targetNode);
+        targetNode.gameObject.AddComponent<FallingBranch>();
     }
     
     // Update is called once per frame
@@ -37,9 +59,7 @@ public class CollisionChamber : MonoBehaviour
         }
         foreach (GrowingSceneNode gsn in removeThese)
         {
-            plantParts.Remove(gsn);
-            Destroy(gsn.transform.gameObject);
-            Destroy(gsn);
+            CutSegment(gsn);
         }
     }
 
