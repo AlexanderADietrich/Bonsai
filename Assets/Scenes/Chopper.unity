@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -307,6 +307,9 @@ MonoBehaviour:
   MyColor: {r: 0.1, g: 0.1, b: 0.2, a: 1}
   Pivot: {x: 0, y: -1, z: 0}
   currentLoc: {x: 0, y: 0, z: 0}
+  hitbox: {fileID: 0}
+  genHitbox: 1
+  manipulateIfHit: {fileID: 1878306589}
 --- !u!136 &276614631
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -720,6 +723,9 @@ MonoBehaviour:
   MyColor: {r: 0, g: 1, b: 0.010393143, a: 1}
   Pivot: {x: 0, y: 0, z: 0}
   currentLoc: {x: 0, y: 0, z: 0}
+  hitbox: {fileID: 0}
+  genHitbox: 0
+  manipulateIfHit: {fileID: 0}
 --- !u!136 &542374226
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -829,6 +835,9 @@ MonoBehaviour:
   MyColor: {r: 0, g: 1, b: 0.010393143, a: 1}
   Pivot: {x: 0, y: 0, z: 0}
   currentLoc: {x: 0, y: 0, z: 0}
+  hitbox: {fileID: 0}
+  genHitbox: 0
+  manipulateIfHit: {fileID: 0}
 --- !u!136 &546361621
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1143,6 +1152,9 @@ MonoBehaviour:
   MyColor: {r: 0.1, g: 0.1, b: 0.2, a: 1}
   Pivot: {x: 0, y: -1, z: 0}
   currentLoc: {x: 0, y: 0, z: 0}
+  hitbox: {fileID: 0}
+  genHitbox: 1
+  manipulateIfHit: {fileID: 574828091}
 --- !u!136 &740658209
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1435,7 +1447,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040388553}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1040388556
 Camera:
   m_ObjectHideFlags: 0
@@ -1491,6 +1503,7 @@ GameObject:
   - component: {fileID: 1103155433}
   - component: {fileID: 1103155432}
   - component: {fileID: 1103155431}
+  - component: {fileID: 1103155435}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: Untagged
@@ -1578,6 +1591,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1103155435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103155430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b81de4b316f8244954b8e767f89acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 963194227}
+  mSelectedObject: {fileID: 0}
 --- !u!1 &1119013280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,6 +1799,9 @@ MonoBehaviour:
   MyColor: {r: 0.1, g: 0.1, b: 0.2, a: 1}
   Pivot: {x: 0, y: -1, z: 0}
   currentLoc: {x: 0, y: 0, z: 0}
+  hitbox: {fileID: 0}
+  genHitbox: 1
+  manipulateIfHit: {fileID: 413726470}
 --- !u!136 &1157933383
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1945,6 +1975,9 @@ MonoBehaviour:
   MyColor: {r: 0.9103774, g: 0.9103774, b: 1, a: 1}
   Pivot: {x: 0, y: -1, z: 0}
   currentLoc: {x: 0, y: 0, z: 0}
+  hitbox: {fileID: 0}
+  genHitbox: 0
+  manipulateIfHit: {fileID: 0}
 --- !u!65 &1551015704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2318,6 +2351,9 @@ MonoBehaviour:
   MyColor: {r: 0.1, g: 0.1, b: 0.2, a: 1}
   Pivot: {x: 0, y: -1, z: 0}
   currentLoc: {x: 0, y: 0, z: 0}
+  hitbox: {fileID: 0}
+  genHitbox: 1
+  manipulateIfHit: {fileID: 948654528}
 --- !u!136 &1955777493
 CapsuleCollider:
   m_ObjectHideFlags: 0
